@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 
 const LandingPage = ({ onStart }) => {
     const [formData, setFormData] = useState({
-        name: '',
+        userName: '',
         valentineName: '',
-        description: ''
+        gameIdea: ''
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (formData.name && formData.valentineName) {
+        if (formData.userName && formData.valentineName) {
             onStart(formData);
         }
     };
@@ -29,8 +29,8 @@ const LandingPage = ({ onStart }) => {
                     <input
                         type="text"
                         placeholder="e.g. Romeo"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        value={formData.userName}
+                        onChange={(e) => setFormData({ ...formData, userName: e.target.value })}
                         required
                     />
                 </div>
@@ -47,17 +47,19 @@ const LandingPage = ({ onStart }) => {
                 </div>
 
                 <div className="input-group">
-                    <label>Describe your relationship / them</label>
+                    <label>What's your game idea?</label>
                     <textarea
-                        rows="3"
-                        placeholder="e.g. We love pizza, hiking, and silly jokes..."
-                        value={formData.description}
-                        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                        rows="2"
+                        placeholder="e.g. A quiz about our first date, or a maze to my heart..."
+                        value={formData.gameIdea}
+                        onChange={(e) => setFormData({ ...formData, gameIdea: e.target.value })}
+                        required
+                        style={{ resize: 'none' }}
                     />
                 </div>
 
                 <button type="submit" className="btn-primary">
-                    Create Card 💖
+                    Create A Game For Your Valentine
                 </button>
             </form>
         </div>

@@ -1,0 +1,17 @@
+{
+    "name": "valentine-generator",
+    "version": "1.0.0",
+    "description": "Generate romantic Valentine mini-games using local Ollama",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "@google/generative-ai": "^0.24.1",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.4",
+        "express": "^4.18.2",
+        "ollama": "^0.6.3"
+    }
+}
